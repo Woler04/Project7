@@ -4,6 +4,7 @@ namespace Project7.Models
 {
     public class TaskModel
     {
+        [Key]
         public int TaskId { get; set; }
         public int TaskListId { get; set; }
         public int UserId { get; set; }

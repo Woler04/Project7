@@ -1,0 +1,60 @@
+﻿@page
+@model Project7.Views.TaskView.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskModel[0].TaskListId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskModel[0].UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskModel[0].TaskTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskModel[0].TaskDeadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaskModel[0].TaskDesc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TaskModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskListId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDeadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskDesc)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.TaskId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.TaskId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.TaskId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

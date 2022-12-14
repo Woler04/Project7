@@ -1,7 +1,10 @@
-﻿namespace Project7.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Project7.Models
 {
     public class UserModel
     {
+        [Key]
         public int UserId { get; set; }
         public string FirsstName { get; set; }
         public string LastName { get; set; }

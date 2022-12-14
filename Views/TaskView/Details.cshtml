@@ -1,0 +1,49 @@
+﻿@page
+@model Project7.Views.TaskView.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TaskModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskModel.TaskListId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskModel.TaskListId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskModel.UserId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskModel.UserId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskModel.TaskTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskModel.TaskTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskModel.TaskDeadline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskModel.TaskDeadline)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TaskModel.TaskDesc)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TaskModel.TaskDesc)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TaskModel?.TaskId">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
